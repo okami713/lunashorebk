@@ -553,7 +553,7 @@ footer p {
   .hero-grid,
   .industries-grid,
   .about-grid,
-  .contact.html-grid {
+  .contact-grid {
     grid-template-columns: 1fr;
     gap: 45px;
   }
@@ -576,7 +576,7 @@ footer p {
   .services-section,
   .industries-section,
   .about-section,
-  .contact.html-section {
+  .contact-section {
     padding: 70px 0;
   }
 
@@ -655,7 +655,7 @@ footer p {
   .section-heading h2,
   .industries-grid h2,
   .about-grid h2,
-  .contact.html-info h2,
+  .contact-info h2,
   .problem-section h2 {
     color: #ffffff;
   }
