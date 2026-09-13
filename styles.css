@@ -2,6 +2,16 @@
    BASE
 ------------------------------ */
 
+
+:root {
+  --primary-color: #1F3450;
+  --secondary-color: #3B5068;
+  --accent-color: #b66a31;
+  --text-color: #1d2924;
+  --background-color: #ffffff;
+  --light-background-color: #f5f6f2;
+  --dark-background-color: #121816;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -85,25 +95,21 @@ p {
   justify-content: space-between;
 }
 
-.logo {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #1F3450;
+  .logo {
   display: flex;
   justify-content: center; /* Centers horizontally */
   align-items: center;     /* Centers vertically */
-}
+  }
 
-.logo span {
-  color: #b66a31;
-}
-
-.logo-main {
+  .logo img {
   width: auto; /* Set your desired smaller width */
   height: 82px; /* Keeps the original aspect ratio so the image doesn't distort */
+  }
 
-}
-
+  .logo-dark {
+    display: none;
+  }
+  
 nav {
   display: flex;
   align-items: center;
@@ -128,7 +134,7 @@ nav a:hover {
 
 .nav-button:hover {
   color: white;
-  background: #3B5068;
+  background: var(--secondary-color);
 }
 
 
@@ -157,7 +163,7 @@ nav a:hover {
 
 .secondary-button {
   border: 1px solid #bdc7c1;
-  color: #1F3450;
+  color: var(--primary-color);
   background: white;
 }
 
@@ -167,7 +173,7 @@ nav a:hover {
 
 .light-button {
   background: white;
-  color: #1F3450;
+  color: var(--primary-color);
 }
 
 .full-button {
@@ -192,7 +198,7 @@ nav a:hover {
 }
 
 .hero h1 {
-  color: #1F3450;
+  color: var(--primary-color);
   margin-bottom: 24px;
 }
 
@@ -259,7 +265,7 @@ nav a:hover {
 }
 
 .problem-section h2 {
-  color: #1F3450;
+  color: var(--primary-color);
   margin-bottom: 26px;
 }
 
@@ -284,7 +290,7 @@ nav a:hover {
 }
 
 .section-heading h2 {
-  color: #1F3450;
+  color: var(--primary-color);
 }
 
 .services-grid {
@@ -308,7 +314,7 @@ nav a:hover {
 }
 
 .service-card h3 {
-  color: #1F3450;
+  color: var(--primary-color);
   margin-bottom: 12px;
 }
 
@@ -328,7 +334,7 @@ nav a:hover {
 }
 
 .industries-grid h2 {
-  color: #1F3450;
+  color: var(--primary-color);
   margin-bottom: 20px;
 }
 
@@ -341,7 +347,7 @@ nav a:hover {
   padding: 18px 10px;
   border-bottom: 1px solid #d9dfdc;
   font-weight: 600;
-  color: #1F3450;
+  color: var(--primary-color);
 }
 
 
@@ -383,7 +389,7 @@ nav a:hover {
 }
 
 .about-grid h2 {
-  color: #1F3450;
+  color: var(--primary-color);
   margin-bottom: 24px;
 }
 
@@ -423,46 +429,46 @@ nav a:hover {
    CONTACT
 ------------------------------ */
 
-.contact-hero {
+.contact.html-hero {
   padding: 90px 0 70px;
   background: #f5f6f2;
 }
 
-.contact-hero h1 {
-  color: #1F3450;
+.contact.html-hero h1 {
+  color: var(--primary-color);
   margin-bottom: 24px;
 }
 
-.contact-hero p {
+.contact.html-hero p {
   font-size: 1.1rem;
 }
 
-.contact-section {
+.contact.html-section {
   padding: 90px 0;
 }
 
-.contact-grid {
+.contact.html-grid {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 80px;
 }
 
-.contact-info h2 {
-  color: #1F3450;
+.contact.html-info h2 {
+  color: var(--primary-color);
   margin-bottom: 24px;
 }
 
-.contact-info > p {
+.contact.html-info > p {
   margin-bottom: 35px;
 }
 
-.contact-detail {
+.contact.html-detail {
   margin-bottom: 25px;
 }
 
-.contact-detail strong {
+.contact.html-detail strong {
   display: block;
-  color: #1F3450;
+  color: var(--primary-color);
   margin-bottom: 4px;
 }
 
@@ -479,7 +485,7 @@ nav a:hover {
 label {
   display: block;
   font-weight: 700;
-  color: #1F3450;
+  color: var(--primary-color);
   margin-bottom: 8px;
 }
 
@@ -518,7 +524,7 @@ textarea {
 
 footer {
   padding: 35px 0;
-  background: #3B5068;
+  background: var(--secondary-color);
   color: white;
 }
 
@@ -547,7 +553,7 @@ footer p {
   .hero-grid,
   .industries-grid,
   .about-grid,
-  .contact-grid {
+  .contact.html-grid {
     grid-template-columns: 1fr;
     gap: 45px;
   }
@@ -570,7 +576,7 @@ footer p {
   .services-section,
   .industries-section,
   .about-section,
-  .contact-section {
+  .contact.html-section {
     padding: 70px 0;
   }
 
@@ -592,4 +598,90 @@ footer p {
     align-items: flex-start;
     gap: 16px;
   }
+}
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    --primary-color: #c5cec9;
+  }
+
+  body {
+    background: #121816;
+    color: #f5f6f2;
+  }
+
+  p {
+    color: #c5cec9;
+  }
+
+  .site-header {
+    background: #121816;
+    border-color: #29332f;
+  }
+
+  .logo {
+    color: #ffffff;
+  }
+
+ .logo-light {
+  display: none;
+  }
+
+  .logo-dark {
+  display: block;
+  }
+  
+  nav a {
+    color: #ffffff;
+  }
+
+  .hero,
+  .services-section,
+  .contact.html-hero,
+  .form-card {
+    background: #1a211e;
+  }
+
+  .problem-section,
+  .industries-section,
+  .contact.html-section {
+    background: var(--secondary-color);
+  }
+
+  .hero h1,
+  h2,
+  h3,
+  .section-heading h2,
+  .industries-grid h2,
+  .about-grid h2,
+  .contact.html-info h2,
+  .problem-section h2 {
+    color: #ffffff;
+  }
+
+  .service-card {
+    background: var(--secondary-color);
+    border-color: #35413b;
+  }
+
+  input,
+  select,
+  textarea {
+    background: #202925;
+    color: #ffffff;
+    border-color: #46534c;
+  }
+
+  .secondary-button {
+    background: transparent;
+    color: #ffffff;
+    border-color: #59655f;
+  }
+
+  .about-section {
+    background: #1c2823;
+  }
+
+  
 }

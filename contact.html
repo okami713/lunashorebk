@@ -14,22 +14,20 @@
   <link rel="icon" href="Logotransparent.png" sizes="any">
 
   <link rel="stylesheet" href="styles.css">
-</head>
 
 <body>
 
   <header class="site-header">
     <div class="container nav-container">
-
-      <a href="index" class="logo">
-          <img src="LogoWebsiteBookkeepingv1.png" alt="Luna Shore Bookkeeping Logo" class="logo-main">
-      </a>  
-
+        <a href="index.html" class="logo">
+          <img src="LogoWebsite.light.png" class="logo-img logo-light" alt="Luna Shore Bookkeeping">
+          <img src="LogoWebsite.dark.png" class="logo-img logo-dark" alt="Luna Shore Bookkeeping">
+        </a>
       <nav>
-        <a href="index">Home</a>
-        <a href="index#services">Services</a>
-        <a href="index#about">About</a>
-        <a href="contact" class="nav-button">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="contact.html" class="nav-button">Contact</a>
       </nav>
 
     </div>
@@ -90,7 +88,14 @@
 
         <div class="form-card">
 
-          <form action="#" method="POST">
+          <form action="https://api.web3forms.com/submit" method="POST">
+
+            <!-- Web3Forms Access Key -->
+            <input
+              type="hidden"
+              name="access_key"
+              value="89d77868-7be1-4e76-bfbd-99f6aff339bd"
+            >
 
             <div class="form-group">
               <label for="name">Your Name</label>
@@ -127,9 +132,9 @@
             <div class="form-group">
               <label for="phone-number">Phone Number</label>
               <input
-                type="phone-number"
+                type="tel"
                 id="phone-number"
-                name="phone-number"
+                name="phone"
                 placeholder="(XXX) XXX-XXXX"
                 required
               >
@@ -137,11 +142,10 @@
 
             <div class="form-group">
               <label for="business-type">Type of Business</label>
-            
               <input
-                type="business-type"
+                type="text"
                 id="business-type"
-                name="business-type"
+                name="business_type"
                 placeholder="General Contractor"
                 required
               >
@@ -152,12 +156,14 @@
 
               <select id="help" name="help">
                 <option value="">Select one</option>
-                <option>Monthly Bookkeeping</option>
-                <option>Bookkeeping Cleanup</option>
-                <option>Job Costing</option>
-                <option>Financial Reporting</option>
-                <option>1099 / Contractor Tracking</option>
-                <option>Not Sure Yet</option>
+                <option value="Monthly Bookkeeping">Monthly Bookkeeping</option>
+                <option value="Bookkeeping Cleanup">Bookkeeping Cleanup</option>
+                <option value="Job Costing">Job Costing</option>
+                <option value="Financial Reporting">Financial Reporting</option>
+                <option value="1099 / Contractor Tracking">
+                  1099 / Contractor Tracking
+                </option>
+                <option value="Not Sure Yet">Not Sure Yet</option>
               </select>
             </div>
 
@@ -169,6 +175,7 @@
                 name="message"
                 rows="6"
                 placeholder="Tell us a little about your business, your bookkeeping, and what you'd like help with."
+                required
               ></textarea>
             </div>
 
@@ -179,6 +186,10 @@
             <p class="form-note">
               We'll only use your information to respond to your inquiry.
             </p>
+              
+            <div class="h-captcha" data-captcha="true"></div>
+
+
 
           </form>
 
@@ -196,7 +207,7 @@
           <h2>Know your numbers. Build with confidence.</h2>
         </div>
 
-        <a href="index#services" class="button light-button">
+        <a href="index.html#services" class="button light-button">
           View Our Services
         </a>
 
@@ -221,5 +232,20 @@
     </div>
   </footer>
 
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+  <script>
+const form = document.getElementById('89d77868-7be1-4e76-bfbd-99f6aff339bd');
+
+form.addEventListener('submit', function(e) {
+
+    const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+
+    if (!hCaptcha) {
+        e.preventDefault();
+        alert("Please fill out captcha field")
+        return
+    }
+});
+</script>
 </body>
 </html>
