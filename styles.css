@@ -638,14 +638,14 @@ footer p {
 
   .hero,
   .services-section,
-  .contact.html-hero,
+  .contact-hero,
   .form-card {
     background: #1a211e;
   }
 
   .problem-section,
   .industries-section,
-  .contact.html-section {
+  .contact-section {
     background: var(--secondary-color);
   }
 
