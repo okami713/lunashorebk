@@ -78,7 +78,6 @@ p {
   color: #dbc0a7;
 }
 
-}
 
 /* ------------------------------
    NAVIGATION
@@ -96,25 +95,21 @@ p {
   justify-content: space-between;
 }
 
-.logo {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--primary-color);
+  .logo {
   display: flex;
   justify-content: center; /* Centers horizontally */
   align-items: center;     /* Centers vertically */
-}
+  }
 
-.logo span {
-  color: #b66a31;
-}
-
-.logo-main {
+  .logo img {
   width: auto; /* Set your desired smaller width */
   height: 82px; /* Keeps the original aspect ratio so the image doesn't distort */
+  }
 
-}
-
+  .logo-dark {
+    display: none;
+  }
+  
 nav {
   display: flex;
   align-items: center;
@@ -629,6 +624,14 @@ footer p {
     color: #ffffff;
   }
 
+ .logo-light {
+  display: none;
+  }
+
+  .logo-dark {
+  display: block;
+  }
+  
   nav a {
     color: #ffffff;
   }
@@ -679,4 +682,6 @@ footer p {
   .about-section {
     background: #1c2823;
   }
+
+  
 }
