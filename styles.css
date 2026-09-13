@@ -683,5 +683,8 @@ footer p {
     background: #1c2823;
   }
 
-  
+  .light-button {
+  background: white;
+  color: var(--accent-color);
+}
 }
