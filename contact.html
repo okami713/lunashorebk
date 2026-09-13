@@ -16,6 +16,38 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
+<script>
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeIcon = document.getElementById("theme-icon");
+  const themeText = document.getElementById("theme-text");
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    themeIcon.textContent = "☀";
+    themeText.textContent = "Light";
+  }
+
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    const darkMode = document.body.classList.contains("dark-mode");
+
+    if (darkMode) {
+      themeIcon.textContent = "☀";
+      themeText.textContent = "Light";
+      localStorage.setItem("theme", "dark");
+    } else {
+      themeIcon.textContent = "☾";
+      themeText.textContent = "Dark";
+      localStorage.setItem("theme", "light");
+    }
+  });
+</script>
+
+
 <body>
 
   <header class="site-header">
@@ -25,12 +57,19 @@
           <img src="LogoWebsiteBookkeepingv1.png" alt="Luna Shore Bookkeeping Logo" class="logo-main">
       </a>  
 
-      <nav>
-        <a href="index">Home</a>
-        <a href="index#services">Services</a>
-        <a href="index#about">About</a>
-        <a href="contact" class="nav-button">Contact</a>
-      </nav>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#about">About</a>
+
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <span id="theme-icon">☾</span>
+            <span id="theme-text">Dark</span>
+          </button>
+
+          <a href="contact.html" class="nav-button">Contact</a>
+        </nav>
+
 
     </div>
   </header>

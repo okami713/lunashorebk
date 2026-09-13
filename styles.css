@@ -593,3 +593,244 @@ footer p {
     gap: 16px;
   }
 }
+  
+/* =========================================
+   LIGHT / DARK MODE TOGGLE
+========================================= */
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  border: 1px solid #cfd7d2;
+  border-radius: 5px;
+  background: transparent;
+  color: #183d32;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: #f1f3f1;
+}
+
+#theme-icon {
+  font-size: 1.1rem;
+}
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+body.dark-mode {
+  background: #121816;
+  color: #f5f6f2;
+}
+
+
+/* Header */
+
+body.dark-mode .site-header {
+  background: #121816;
+  border-color: #303a35;
+}
+
+body.dark-mode .logo {
+  color: #ffffff;
+}
+
+body.dark-mode nav a {
+  color: #ffffff;
+}
+
+body.dark-mode .theme-toggle {
+  color: #ffffff;
+  border-color: #59655f;
+}
+
+body.dark-mode .theme-toggle:hover {
+  background: #202925;
+}
+
+
+/* Hero */
+
+body.dark-mode .hero {
+  background: #1a211e;
+}
+
+body.dark-mode .hero h1 {
+  color: #ffffff;
+}
+
+body.dark-mode .hero-text {
+  color: #c5cec9;
+}
+
+
+/* General text */
+
+body.dark-mode p {
+  color: #c5cec9;
+}
+
+
+/* Problem section */
+
+body.dark-mode .problem-section {
+  background: #121816;
+}
+
+body.dark-mode .problem-section h2 {
+  color: #ffffff;
+}
+
+
+/* Services */
+
+body.dark-mode .services-section {
+  background: #1a211e;
+}
+
+body.dark-mode .section-heading h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .service-card {
+  background: #202925;
+  border-color: #35413b;
+}
+
+body.dark-mode .service-card h3 {
+  color: #ffffff;
+}
+
+
+/* Industries */
+
+body.dark-mode .industries-section {
+  background: #121816;
+}
+
+body.dark-mode .industries-grid h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .industry-list div {
+  color: #ffffff;
+  border-color: #303a35;
+}
+
+
+/* About */
+
+body.dark-mode .about-section {
+  background: #1c2823;
+}
+
+body.dark-mode .about-grid h2 {
+  color: #ffffff;
+}
+
+
+/* Contact */
+
+body.dark-mode .contact-hero {
+  background: #1a211e;
+}
+
+body.dark-mode .contact-hero h1 {
+  color: #ffffff;
+}
+
+body.dark-mode .contact-section {
+  background: #121816;
+}
+
+body.dark-mode .contact-info h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .contact-detail strong {
+  color: #ffffff;
+}
+
+
+/* Contact form */
+
+body.dark-mode .form-card {
+  background: #1a211e;
+}
+
+body.dark-mode label {
+  color: #ffffff;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  background: #202925;
+  color: #ffffff;
+  border-color: #46534c;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #89968f;
+}
+
+body.dark-mode .secondary-button {
+  background: transparent;
+  color: #ffffff;
+  border-color: #59655f;
+}
+
+
+/* CTA */
+
+body.dark-mode .cta-section {
+  background: #0d2420;
+}
+
+
+/* Footer */
+
+body.dark-mode footer {
+  background: #091914;
+}
+
+
+/* Smooth transition */
+
+body,
+.site-header,
+.hero,
+.problem-section,
+.services-section,
+.industries-section,
+.about-section,
+.contact-hero,
+.contact-section,
+.form-card,
+.service-card,
+footer {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+/* Mobile */
+
+@media (max-width: 850px) {
+  .theme-toggle {
+    padding: 8px 10px;
+  }
+
+
+}
