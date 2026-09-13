@@ -139,7 +139,7 @@ nav a:hover {
 
 .nav-button:hover {
   color: white;
-  background: #var(--secondary color);
+  background: var(--secondary-color);
 }
 
 
@@ -529,7 +529,7 @@ textarea {
 
 footer {
   padding: 35px 0;
-  background: #var(--secondary color);
+  background: var(--secondary-color);
   color: white;
 }
 
@@ -607,6 +607,10 @@ footer p {
 
 @media (prefers-color-scheme: dark) {
 
+  :root {
+    --primary-color: #c5cec9;
+  }
+
   body {
     background: #121816;
     color: #f5f6f2;
@@ -639,7 +643,7 @@ footer p {
   .problem-section,
   .industries-section,
   .contact-section {
-    background: #121816;
+    background: var(--secondary-color);
   }
 
   .hero h1,
@@ -648,12 +652,13 @@ footer p {
   .section-heading h2,
   .industries-grid h2,
   .about-grid h2,
-  .contact-info h2 {
+  .contact-info h2,
+  .problem-section h2 {
     color: #ffffff;
   }
 
   .service-card {
-    background: #202925;
+    background: var(--secondary-color);
     border-color: #35413b;
   }
 
