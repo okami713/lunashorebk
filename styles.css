@@ -593,3 +593,74 @@ footer p {
     gap: 16px;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+
+  body {
+    background: #121816;
+    color: #f5f6f2;
+  }
+
+  p {
+    color: #c5cec9;
+  }
+
+  .site-header {
+    background: #121816;
+    border-color: #29332f;
+  }
+
+  .logo {
+    color: #ffffff;
+  }
+
+  nav a {
+    color: #ffffff;
+  }
+
+  .hero,
+  .services-section,
+  .contact-hero,
+  .form-card {
+    background: #1a211e;
+  }
+
+  .problem-section,
+  .industries-section,
+  .contact-section {
+    background: #121816;
+  }
+
+  .hero h1,
+  h2,
+  h3,
+  .section-heading h2,
+  .industries-grid h2,
+  .about-grid h2,
+  .contact-info h2 {
+    color: #ffffff;
+  }
+
+  .service-card {
+    background: #202925;
+    border-color: #35413b;
+  }
+
+  input,
+  select,
+  textarea {
+    background: #202925;
+    color: #ffffff;
+    border-color: #46534c;
+  }
+
+  .secondary-button {
+    background: transparent;
+    color: #ffffff;
+    border-color: #59655f;
+  }
+
+  .about-section {
+    background: #1c2823;
+  }
+}
