@@ -135,6 +135,7 @@
                 type="tel"
                 id="phone-number"
                 name="phone"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                 placeholder="(XXX) XXX-XXXX"
                 required
               >
@@ -175,7 +176,6 @@
                 name="message"
                 rows="6"
                 placeholder="Tell us a little about your business, your bookkeeping, and what you'd like help with."
-                required
               ></textarea>
             </div>
 
@@ -232,18 +232,18 @@
 
   <script src="https://web3forms.com/client/script.js" async defer></script>
   <script>
-const form = document.getElementById('89d77868-7be1-4e76-bfbd-99f6aff339bd');
+    const form = document.getElementById('89d77868-7be1-4e76-bfbd-99f6aff339bd');
 
-form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function(e) {
 
-    const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+        const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
 
-    if (!hCaptcha) {
-        e.preventDefault();
-        alert("Please fill out captcha field")
-        return
-    }
-});
-</script>
+        if (!hCaptcha) {
+            e.preventDefault();
+            alert("Please fill out captcha field")
+            return
+        }
+    });
+  </script>
 </body>
 </html>
