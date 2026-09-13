@@ -186,6 +186,10 @@
             <p class="form-note">
               We'll only use your information to respond to your inquiry.
             </p>
+              
+            <div class="h-captcha" data-captcha="true"></div>
+
+
 
           </form>
 
@@ -228,5 +232,20 @@
     </div>
   </footer>
 
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+  <script>
+const form = document.getElementById('YOUR_FORM_ID');
+
+form.addEventListener('submit', function(e) {
+
+    const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+
+    if (!hCaptcha) {
+        e.preventDefault();
+        alert("Please fill out captcha field")
+        return
+    }
+});
+</script>
 </body>
 </html>
