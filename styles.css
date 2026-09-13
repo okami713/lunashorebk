@@ -2,6 +2,16 @@
    BASE
 ------------------------------ */
 
+
+:root {
+  --primary-color: #1F3450;
+  --secondary-color: #3B5068;
+  --accent-color: #b66a31;
+  --text-color: #1d2924;
+  --background-color: #ffffff;
+  --light-background-color: #f5f6f2;
+  --dark-background-color: #121816;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -68,6 +78,7 @@ p {
   color: #dbc0a7;
 }
 
+}
 
 /* ------------------------------
    NAVIGATION
@@ -88,7 +99,7 @@ p {
 .logo {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #1F3450;
+  color: var(--primary-color);
   display: flex;
   justify-content: center; /* Centers horizontally */
   align-items: center;     /* Centers vertically */
@@ -128,7 +139,7 @@ nav a:hover {
 
 .nav-button:hover {
   color: white;
-  background: #3B5068;
+  background: #var(--secondary color);
 }
 
 
@@ -157,7 +168,7 @@ nav a:hover {
 
 .secondary-button {
   border: 1px solid #bdc7c1;
-  color: #1F3450;
+  color: var(--primary-color);
   background: white;
 }
 
@@ -167,7 +178,7 @@ nav a:hover {
 
 .light-button {
   background: white;
-  color: #1F3450;
+  color: var(--primary-color);
 }
 
 .full-button {
@@ -192,7 +203,7 @@ nav a:hover {
 }
 
 .hero h1 {
-  color: #1F3450;
+  color: var(--primary-color);
   margin-bottom: 24px;
 }
 
@@ -259,7 +270,7 @@ nav a:hover {
 }
 
 .problem-section h2 {
-  color: #1F3450;
+  color: var(--primary-color);
   margin-bottom: 26px;
 }
 
@@ -284,7 +295,7 @@ nav a:hover {
 }
 
 .section-heading h2 {
-  color: #1F3450;
+  color: var(--primary-color);
 }
 
 .services-grid {
@@ -308,7 +319,7 @@ nav a:hover {
 }
 
 .service-card h3 {
-  color: #1F3450;
+  color: var(--primary-color);
   margin-bottom: 12px;
 }
 
@@ -328,7 +339,7 @@ nav a:hover {
 }
 
 .industries-grid h2 {
-  color: #1F3450;
+  color: var(--primary-color);
   margin-bottom: 20px;
 }
 
@@ -341,7 +352,7 @@ nav a:hover {
   padding: 18px 10px;
   border-bottom: 1px solid #d9dfdc;
   font-weight: 600;
-  color: #1F3450;
+  color: var(--primary-color);
 }
 
 
@@ -383,7 +394,7 @@ nav a:hover {
 }
 
 .about-grid h2 {
-  color: #1F3450;
+  color: var(--primary-color);
   margin-bottom: 24px;
 }
 
@@ -429,7 +440,7 @@ nav a:hover {
 }
 
 .contact-hero h1 {
-  color: #1F3450;
+  color: var(--primary-color);
   margin-bottom: 24px;
 }
 
@@ -448,7 +459,7 @@ nav a:hover {
 }
 
 .contact-info h2 {
-  color: #1F3450;
+  color: var(--primary-color);
   margin-bottom: 24px;
 }
 
@@ -462,7 +473,7 @@ nav a:hover {
 
 .contact-detail strong {
   display: block;
-  color: #1F3450;
+  color: var(--primary-color);
   margin-bottom: 4px;
 }
 
@@ -479,7 +490,7 @@ nav a:hover {
 label {
   display: block;
   font-weight: 700;
-  color: #1F3450;
+  color: var(--primary-color);
   margin-bottom: 8px;
 }
 
@@ -518,7 +529,7 @@ textarea {
 
 footer {
   padding: 35px 0;
-  background: #3B5068;
+  background: #var(--secondary color);
   color: white;
 }
 
