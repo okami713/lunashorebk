@@ -20,6 +20,29 @@
     <!-- Load libphonenumber-js directly from CDN -->
   <script src="https://unpkg.com"></script>
 
+
+   <!-- Import libphonenumber-js from a CDN -->
+  <script type="module">
+    import { AsYouType } from 'https://unpkg.com';
+
+    const phoneInput = document.getElementById('phone');
+    const DEFAULT_COUNTRY = 'US'; 
+
+    phoneInput.addEventListener('input', (event) => {
+      const inputElement = event.target;
+      const rawValue = inputElement.value;
+
+      // 1. Initialize the formatter with a default fallback country
+      const formatter = new AsYouType(DEFAULT_COUNTRY);
+
+      // 2. Feed the raw string into the formatter
+      const formattedValue = formatter.input(rawValue);
+
+      // 3. Update the input field with the formatted string
+      inputElement.value = formattedValue;
+    });
+  </script>
+
     <!-- <script src="https://[username].github.io/[repository]/[filename].js"></script> -->
 
   <script src="https://web3forms.com/client/script.js" async defer></script>
@@ -44,7 +67,7 @@
 
   <header class="site-header">
     <div class="container nav-container">
-        <a href="/contact" class="logo">
+        <a href="/" class="logo">
           <img src="LogoWebsite.light.png" class="logo-img logo-light" alt="Luna Shore Bookkeeping">
           <img src="LogoWebsite.dark.png" class="logo-img logo-dark" alt="Luna Shore Bookkeeping">
         </a>
