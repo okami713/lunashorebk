@@ -17,7 +17,58 @@
 
   <link rel="stylesheet" href="styles.css">
 
-  <!-- <script src="https://[username].github.io/[repository]/[filename].js"></script> -->
+    <!-- Load libphonenumber-js directly from CDN -->
+  <script src="https://unpkg.com"></script>
+
+  <script>
+    // Ensure the DOM elements are loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      const phoneInput = document.getElementById('phone-number');
+      const phoneError = document.getElementById('phone-error');
+
+      // Access the library from the global window object via CDN bundle
+      const { AsYouType } = window.libphonenumber;
+
+      phoneInput.addEventListener('input', (e) => {
+        // 1. Store cursor tracking to keep typing comfortable
+        let cursorPosition = e.target.selectionStart;
+        let oldLength = e.target.value.length;
+
+        // 2. Format the value dynamically (defaulting to 'US' layout)
+        const formatter = new AsYouType('US');
+        const formattedValue = formatter.input(e.target.value);
+
+        // 3. Update the UI input field string value
+        e.target.value = formattedValue;
+
+        // 4. Readjust the text selection cursor position so it doesn't snap to the end
+        let newLength = formattedValue.length;
+        cursorPosition = cursorPosition + (newLength - oldLength);
+        e.target.setSelectionRange(cursorPosition, cursorPosition);
+        
+        // 5. Clean up any error text while typing
+        phoneError.textContent = '';
+      });
+    });
+  </script>
+
+    <!-- <script src="https://[username].github.io/[repository]/[filename].js"></script> -->
+
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+  <script>
+    const form = document.getElementById('89d77868-7be1-4e76-bfbd-99f6aff339bd');
+
+    form.addEventListener('submit', function(e) {
+
+        const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+
+        if (!hCaptcha) {
+            e.preventDefault();
+            alert("Please fill out captcha field")
+            return
+        }
+    });
+  </script>
 
 <head>
 
@@ -238,55 +289,6 @@
     </div>
   </footer>
 
-    <!-- Load libphonenumber-js directly from CDN -->
-  <script src="https://unpkg.com"></script>
 
-  <script>
-    // Ensure the DOM elements are loaded
-    document.addEventListener('DOMContentLoaded', () => {
-      const phoneInput = document.getElementById('phone-number');
-      const phoneError = document.getElementById('phone-error');
-
-      // Access the library from the global window object via CDN bundle
-      const { AsYouType } = window.libphonenumber;
-
-      phoneInput.addEventListener('input', (e) => {
-        // 1. Store cursor tracking to keep typing comfortable
-        let cursorPosition = e.target.selectionStart;
-        let oldLength = e.target.value.length;
-
-        // 2. Format the value dynamically (defaulting to 'US' layout)
-        const formatter = new AsYouType('US');
-        const formattedValue = formatter.input(e.target.value);
-
-        // 3. Update the UI input field string value
-        e.target.value = formattedValue;
-
-        // 4. Readjust the text selection cursor position so it doesn't snap to the end
-        let newLength = formattedValue.length;
-        cursorPosition = cursorPosition + (newLength - oldLength);
-        e.target.setSelectionRange(cursorPosition, cursorPosition);
-        
-        // 5. Clean up any error text while typing
-        phoneError.textContent = '';
-      });
-    });
-  </script>
-
-  <script src="https://web3forms.com/client/script.js" async defer></script>
-  <script>
-    const form = document.getElementById('89d77868-7be1-4e76-bfbd-99f6aff339bd');
-
-    form.addEventListener('submit', function(e) {
-
-        const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
-
-        if (!hCaptcha) {
-            e.preventDefault();
-            alert("Please fill out captcha field")
-            return
-        }
-    });
-  </script>
 </body>
 </html>
