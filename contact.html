@@ -19,6 +19,40 @@
 
   <!-- <script src="https://[username].github.io/[repository]/[filename].js"></script> -->
 
+<!-- Load libphonenumber-js directly from CDN -->
+<script src="https://unpkg.com"></script>
+
+<script>
+  // Ensure the DOM elements are loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    const phoneInput = document.getElementById('phone-number');
+    const phoneError = document.getElementById('phone-error');
+
+    // Access the library from the global window object via CDN bundle
+    const { AsYouType } = window.libphonenumber;
+
+    phoneInput.addEventListener('input', (e) => {
+      // 1. Store cursor tracking to keep typing comfortable
+      let cursorPosition = e.target.selectionStart;
+      let oldLength = e.target.value.length;
+
+      // 2. Format the value dynamically (defaulting to 'US' layout)
+      const formatter = new AsYouType('US');
+      const formattedValue = formatter.input(e.target.value);
+
+      // 3. Update the UI input field string value
+      e.target.value = formattedValue;
+
+      // 4. Readjust the text selection cursor position so it doesn't snap to the end
+      let newLength = formattedValue.length;
+      cursorPosition = cursorPosition + (newLength - oldLength);
+      e.target.setSelectionRange(cursorPosition, cursorPosition);
+      
+      // 5. Clean up any error text while typing
+      phoneError.textContent = '';
+    });
+  });
+</script>
 
 <head>
 
@@ -124,16 +158,17 @@
                 placeholder="Smith Construction"
               >
             </div>
-
             <div class="form-group">
-              <label for="email">Email Address</label>
+              <label for="phone-number">Phone Number</label>
               <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="john@example.com"
+                type="tel"
+                id="phone-number"
+                name="phone"
+                placeholder="(123) 456-7890"
+                autocomplete="tel"
                 required
               >
+              <small id="phone-error" class="phone-error"></small>
             </div>
 
             <div class="form-group">
